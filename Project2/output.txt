@@ -1,0 +1,71 @@
+PS C:\Users\mattl> python p2db.py
+
+Query 1:
+(1, 'WILLEY', 'WDT@VSNL.NET', '9112326087')
+(2, 'WROX', 'INFO@WROX.COM', None)
+(3, 'TATA MCGRAW-HILL', 'FEEDBACK@TATAMCGRAWHILL.COM', '9133333322')
+(4, 'TECHMEDIA', 'BOOKS@TECHMEDIA.COM', '9133257660')
+
+
+Query 2: 
+Customer Table created successfully 
+
+Query 3:
+New Table:
+(1, 'ABRAHAM SILBERSCHATZ', 92553, 'MORENO VALLEY', 'CA')
+(2, 'HENRY KORTH', 92336, 'FONTANA', 'CA')
+(3, 'CALVIN HARRIS', 89001, 'ALAMO', 'NV')
+(4, 'MARTIN GARRIX', 78501, 'MCALLAN', 'TX')
+(5, 'JAMES GOODWILL', 96815, 'HONOLULU', 'HI')
+
+Record inserted successfully into customer table
+
+Query 4: 
+(103, 'DAVAID HUNTER', 2)
+
+
+Query 5: 
+('WILLEY', Decimal('475'))
+('WROX', Decimal('875'))
+('TATA MCGRAW-HILL', Decimal('1074'))
+('TECHMEDIA', Decimal('540'))
+
+
+Query 6: 
+('DAVAID HUNTER',)
+('ED. ROMANS',)
+
+
+Query 7: 
+('ED. ROMANS',)
+('DAVAID HUNTER',)
+
+
+Query 8: 
+('JAMES GOODWILL',)
+('DAVAID HUNTER',)
+
+
+Query 9
+('STEPHEN WALTHER',)
+
+
+Query 10: 
+Prices Before:
+(1001, datetime.date(2002, 4, 2), 540)
+(1002, datetime.date(2005, 5, 1), 575)
+(1003, datetime.date(2005, 2, 3), 475)
+(1004, datetime.date(2005, 4, 3), 499)
+(1005, datetime.date(2005, 6, 15), 450)
+(1006, datetime.date(2002, 12, 2), 425)
+
+Prices After:
+(1001, datetime.date(2002, 4, 2), 405)
+(1002, datetime.date(2005, 5, 1), 518)
+(1003, datetime.date(2005, 2, 3), 428)
+(1004, datetime.date(2005, 4, 3), 449)
+(1005, datetime.date(2005, 6, 15), 405)
+(1006, datetime.date(2002, 12, 2), 319)
+Record Updated successfully
+
+MySQL connection is closed

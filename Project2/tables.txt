@@ -1,0 +1,63 @@
+CREATE TABLE `project2`.`publishers` (
+  `pubID` INT(3) NOT NULL,
+  `pname` VARCHAR(30) NULL,
+  `email` VARCHAR(50) NULL,
+  `phone` VARCHAR(30) NULL,
+  PRIMARY KEY (`pubID`),
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE);
+
+
+CREATE TABLE `project2`.`subjects` (
+  `subID` VARCHAR(5) NOT NULL,
+  `sName` VARCHAR(30) NULL,
+  PRIMARY KEY (`subID`));
+
+
+CREATE TABLE `project2`.`authors` (
+  `auID` INT(5) NOT NULL,
+  `aName` VARCHAR(30) NULL,
+  `email` VARCHAR(50) NULL,
+  `phone` VARCHAR(30) NULL,
+  PRIMARY KEY (`auID`),
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE);
+
+
+CREATE TABLE `project2`.`titles` (
+  `titleID` INT(5) NOT NULL,
+  `title` VARCHAR(30) NULL,
+  `pubID` INT(3) NULL,
+  `subID` VARCHAR(5) NULL,
+  `pubDate` DATE NULL,
+  `cover` VARCHAR(10) NULL,
+  `price` INT(4) NULL,
+  PRIMARY KEY (`titleID`),
+  INDEX `pubid_idx` (`pubID` ASC) VISIBLE,
+  INDEX `subid_idx` (`subID` ASC) VISIBLE,
+  CONSTRAINT `pubid`
+    FOREIGN KEY (`pubID`)
+    REFERENCES `project2`.`publishers` (`pubID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `subID`
+    FOREIGN KEY (`subID`)
+    REFERENCES `project2`.`subjects` (`subID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+CREATE TABLE `project2`.`titleauthors` (
+  `titleID` INT(5) NOT NULL,
+  `auID` INT(5) NOT NULL,
+  `importance` INT(2) NULL,
+  PRIMARY KEY (`titleID`, `auID`),
+  INDEX `auID_idx` (`auID` ASC) VISIBLE,
+  CONSTRAINT `titleid`
+    FOREIGN KEY (`titleID`)
+    REFERENCES `project2`.`titles` (`titleID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `auID`
+    FOREIGN KEY (`auID`)
+    REFERENCES `project2`.`authors` (`auID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
